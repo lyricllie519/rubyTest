@@ -1,0 +1,43 @@
+<%= form_with(model: company, local: true) do |form| %>
+  <% if company.errors.any? %>
+    <div id="error_explanation">
+      <!--<h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>-->
+      <h2><%= t("errors.template.header", model: Company.model_name.name, count: company.errors.count) %></h2>
+
+      <ul>
+        <% company.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label '企業名' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label '住所' %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label '事業詳細' %>
+    <%= form.text_field :detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label '電話番号' %>
+    <%= form.text_field :tel %>
+  </div>
+
+  <div class="field">
+    <%= form.label '従業員数' %>
+    <%= form.number_field :employee_number %>
+  </div>  
+
+  <div class="actions">
+    <%= form.submit '保存' %>
+  </div>
+<% end %>

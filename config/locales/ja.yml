@@ -1,0 +1,25 @@
+ja:
+  activemodel:
+    # モデル名
+    models:
+      user: "ユーザー"
+      attributes:
+        # モデル毎の属性名
+        user:
+          name: "名前"
+    # 共通の属性名
+    attributes:
+      address: "住所"
+  # バリデーションエラー
+  errors:
+    # テンプレート
+    format: "%{attribute}%{message}"
+    # エラー毎のメッセージ
+    messages:
+      blank: "を入力してください!!"
+
+    template:
+      body: 次の項目を確認してください
+      header:
+        one: "%{model}にエラーが発生しました"
+        other: "%{model}に%{count}個のエラーが発生しました"
